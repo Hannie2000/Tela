@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "tela-de-login",
-    "slug": "snack-7dc55c7e-41d6-4b6f-91fe-19699f39d72e",
+    "name": "troca-",
+    "slug": "snack-747080d1-a704-4690-87cd-a2e621d7bbc5",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "edgeToEdgeEnabled": true
     },
     "web": {
       "favicon": "./assets/favicon.png"

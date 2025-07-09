@@ -1,72 +1,28 @@
-import React, {unestade} from 'react';
+import react from 'react';
 
-import { View, Text, TextInput, Pressable, StyleSheet } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 
-const LoginScreen = ({navigation}) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+import {createStackNavigator} from '@react-navigation/stack';
 
+import HomeScreem from './screem/HomeScreem';
+import SecondaryScreem from './screem/SecondaryScreem';
+import CafeScreem from './screem/CafeScreem';
+import BoloScreem from './screem/BoloScreem';
+import PaoScreem from './screem/PaoScreem';
 
-  const handleLogin = () => {
+const Stack = createStackNavigator();
 
-    if(true){
-      navigation.navigate('HomeScreen');
-    }else{    
-      alert('Por favor, preencha todas os campos');
-      }
-  };
-
-  Return (
-  <View style={style.container}>
-  <TextInput style={style.input} 
-    placeholder="Email"
-    value={email} 
-    onChangeText={setEmail}  />
-
-  <View style={style.container}>
-  <TextInput style={style.input} 
-    placeholder="Senha"
-    secureTextEntry={true}
-    value={password} 
-    onChangeText={setPassword}  />
-
-    <Pressable style={style.button} onPress={handleLogin}>
-    <Text style={style.buttonText}>Entrar</Text>
-    </Pressable>
-    </View>
+export default function App() {
+  return(
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+      <Stack.Screem name="Home" component={HomeScreem} options={{ title: 'Bem-vindo!'}}/>
+      <Stack.Screem name="Secondary" component={SecondaryScreem} options={{ title: 'Opções Deliciosas'}}/>
+      <Stack.Screem name="Cafe" component={CafeScreem} options={{ title: 'Nosso Café'}}/>
+      <Stack.Screem name="Bolo" component={BoloScreem} options={{ title: 'Bolo de Chocolate'}}/>
+      <Stack.Screem name="Pao" component={PaoScreem} options={{ title: 'Pão Caseiro'}}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-  };
-
-  const styles = StyleSheet.create({
-    container: {
-      backgroundColor: '#6A0C0B',
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 20,
-      color: 'white',
-    },
-
-    Input: {
-      width: '100%',
-      height: 40,
-      borderColor: '#FBCA03',
-      color: 'white',
-      borderWidth: 1,
-      paddingHorizontal: 10,
-      marginBottom: 10,
-    },
-    Button:{
-      backgroundColor: '#AA0505',
-      padding: 10,
-      borderRadius: 5,
-      borderColor: '#FBCA03',
-    },
-    ButtonText: {
-      color: 'white',
-      textAlign: 'center',
-    },
-});
-
-export default LoginScreen;
+}
 
